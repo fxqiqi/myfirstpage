@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>识万千人 - 琪琪的个人宇宙空间</title>
+    <style>
+        /* 基础样式 */
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        /* 返回首页 */
+        .back-home {
+            padding: 1rem 0;
+        }
+        .back-link {
+            color: #6366f1; /* 专属蓝紫色主色 */
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        /* 页面头部 */
+        .meet-header {
+            background-color: #f5f3ff;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .meet-title {
+            color: #6366f1;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .meet-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        /* 人物卡片 */
+        .person-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 1rem 1.2rem;
+            background-color: #f5f3ff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .person-avatar {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%; /* 圆形头像更显亲和 */
+            border: 2px solid #e9e5ff;
+        }
+        .card-title {
+            color: #333;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+        .card-arrow {
+            color: #6366f1;
+            transition: transform 0.3s ease;
+        }
+        .card-arrow.active {
+            transform: rotate(180deg);
+        }
+        /* 卡片内容 */
+        .card-content {
+            padding: 0 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .card-content.active {
+            padding: 1.2rem;
+            max-height: 1500px;
+        }
+        .content-module {
+            margin-bottom: 1rem;
+        }
+        .module-title {
+            color: #6366f1;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .module-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .story-highlight {
+            background-color: #f5f3ff;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            margin: 0.8rem 0;
+            color: #4f46e5;
+            font-style: italic;
+        }
+        /* 底部版权 */
+        .footer-copyright {
+            width: 100%;
+            background-color: #f5f3ff;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .copyright-content p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- 返回首页 -->
+        <div class="back-home">
+            <a href="../../index.html" class="back-link">← 回到首页</a>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="meet-header">
+            <h2 class="meet-title">识万千人 · 遇见有趣灵魂</h2>
+            <p class="meet-desc">每一次相遇都是缘分，记录那些温暖、有趣、有力量的人，他们的故事让世界更鲜活～</p>
+        </div>
+
+        <!-- 人物1：手作匠人陈阿姨 -->
+        <div class="person-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <img src="https://picsum.photos/id/1062/400/400?craftsman" alt="陈阿姨" class="person-avatar">
+                <h3 class="card-title">陈阿姨 · 坚守30年的老手艺匠人</h3>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">相遇故事</h4>
+                    <p class="module-text">在大理古城闲逛时，被巷子里一间不起眼的手作小店吸引。陈阿姨正在专注地缝制扎染布，阳光洒在她的手上，每一针每一线都透着认真。闲聊中得知，她做扎染已经30年，从跟着外婆学手艺，到如今坚持用天然染料、纯手工制作，拒绝工业化批量生产。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">打动我的瞬间</h4>
+                    <div class="story-highlight">“机器做的快，但少了温度。每块布的纹路都是独一无二的，就像每个人的人生，有瑕疵才真实。”</div>
+                    <p class="module-text">陈阿姨说，现在年轻人愿意学老手艺的越来越少，但她不着急，“总有人会喜欢这份慢下来的美好”。她还主动教我简单的扎染技巧，耐心讲解染料的配比，那种对手艺的热爱和坚守，让人动容。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">我的感悟</h4>
+                    <p class="module-text">陈阿姨让我明白，真正的热爱无关名利，而是日复一日的坚持和专注。在快节奏的时代，这种“择一事，终一生”的工匠精神，是最珍贵的财富。也让我学会，在生活中多一份耐心，多一份对细节的打磨。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人物2：背包客小李 -->
+        <div class="person-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <img src="https://picsum.photos/id/1074/400/400?traveler" alt="小李" class="person-avatar">
+                <h3 class="card-title">小李 · 用脚步丈量世界的95后背包客</h3>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">相遇故事</h4>
+                    <p class="module-text">在厦门环岛路骑行时，和同样独自旅行的小李偶遇。他背着一个磨旧的背包，脸上带着阳光的笑容，已经独自旅行了两年，走过国内20多个省份，靠兼职打工支撑旅途。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">打动我的瞬间</h4>
+                    <div class="story-highlight">“旅行不是逃离生活，而是更好地认识生活。每到一个地方，我都会住当地的民宿，和当地人聊天，感受最真实的烟火气。”</div>
+                    <p class="module-text">小李分享了他在新疆遇到牧民、在云南参与春耕的故事，没有华丽的辞藻，却充满了对生活的热爱。他说，旅行中最珍贵的不是打卡多少景点，而是遇到的人和事，以及内心的成长。他还把自己的旅行笔记借给我看，上面记满了各地的风土人情和感悟。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">我的感悟</h4>
+                    <p class="module-text">小李让我看到了另一种生活方式的可能——勇敢追随内心，不被世俗定义。他的故事告诉我，人生没有标准答案，重要的是去体验、去感受、去成长。也让我在旅行中更愿意主动与人交流，因为你永远不知道，下一个遇见的人会带给你怎样的惊喜。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="footer-copyright">
+        <div class="copyright-content">
+            <p>&copy; 2024 琪琪的个人宇宙空间 - 保留所有权利 | 读万卷书，行万里路，探索生活的无限可能</p>
+        </div>
+    </footer>
+
+    <!-- 切换脚本（与行万里路通用） -->
+    <script>
+        function toggleCard(header) {
+            const arrow = header.querySelector('.card-arrow');
+            const content = header.nextElementSibling;
+            arrow.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

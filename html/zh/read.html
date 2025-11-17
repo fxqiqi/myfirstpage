@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>读万卷书 - 琪琪的个人宇宙空间</title>
+    <style>
+        /* 二级页面基础样式 */
+        .book-header {
+            background-color: #fef7fb;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #fce7f3;
+        }
+        .book-title {
+            text-align: center;
+            color: #9f7aea;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .book-desc {
+            text-align: center;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .book-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* 折叠面板样式（内嵌三级内容） */
+        .collapse-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .collapse-header {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: #fef7fb;
+            transition: background-color 0.3s ease;
+        }
+        .collapse-header:hover {
+            background-color: #fdf2f8;
+        }
+        .book-info {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .book-cover {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .book-meta h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .book-meta p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        .collapse-icon {
+            color: #9f7aea;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .collapse-icon.active {
+            transform: rotate(180deg);
+        }
+        .collapse-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            border-top: 1px solid #fce7f3;
+        }
+        .collapse-content.active {
+            padding: 1.5rem;
+            max-height: 1000px; /* 足够容纳内容 */
+        }
+        .note-header {
+            color: #9f7aea;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .note-content {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .note-highlight {
+            background-color: #fef7fb;
+            border-left: 3px solid #fce7f3;
+            padding: 0.8rem 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 语言切换 -->
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="window.location.href='../../html/zh/read.html'">中文</button>
+        <button class="lang-btn" onclick="window.location.href='../../html/en/read.html'">English</button>
+        <button class="lang-btn" onclick="window.location.href='../../html/ja/read.html'">日本語</button>
+    </div>
+
+    <!-- 页面头部 -->
+    <div class="book-header">
+        <h2 class="book-title">读万卷书 · 探索文字的世界</h2>
+        <p class="book-desc">每一本书都是一个世界，在这里记录我的阅读感悟，分享值得一读的好书，与你共赴文字之约～</p>
+    </div>
+
+    <!-- 核心内容：折叠面板（内嵌三级读书笔记） -->
+    <div class="book-container">
+        <!-- 书籍1：折叠面板 -->
+        <div class="collapse-item">
+            <div class="collapse-header" onclick="toggleCollapse(this)">
+                <div class="book-info">
+                    <img src="https://picsum.photos/400/600?book1" alt="月亮与六便士" class="book-cover">
+                    <div class="book-meta">
+                        <h4>月亮与六便士</h4>
+                        <p>作者：毛姆</p>
+                    </div>
+                </div>
+                <span class="collapse-icon">▼</span>
+            </div>
+            <!-- 三级内容：读书笔记 -->
+            <div class="collapse-content">
+                <div class="note-header">读书笔记</div>
+                <div class="note-content">
+                    <p>《月亮与六便士》讲述了中年银行家查尔斯·思特里克兰德突然抛弃家庭，追寻绘画理想的故事。这本书最打动我的，是主人公对理想的极致执着——他宁愿过着贫困潦倒的生活，甚至牺牲亲情、爱情，也要追寻内心的“月亮”（理想），而对世俗的“六便士”（物质）不屑一顾。</p>
+                    
+                    <div class="note-highlight">
+                        印象最深的一句话：“我告诉你我必须画画，就像溺水的人必须挣扎。” 这句话道尽了理想在他生命中的重量，也让我反思：在现实与理想之间，我们该如何平衡？
+                    </div>
+                    
+                    <p>思特里克兰德的行为或许极端，但他的勇气值得敬佩。他让我明白，人生短短几十年，不要被世俗的眼光束缚，要勇敢去追求真正热爱的事物，哪怕过程艰难，也能活出自己的价值。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 书籍2：折叠面板 -->
+        <div class="collapse-item">
+            <div class="collapse-header" onclick="toggleCollapse(this)">
+                <div class="book-info">
+                    <img src="https://picsum.photos/400/600?book2" alt="人类简史" class="book-cover">
+                    <div class="book-meta">
+                        <h4>人类简史</h4>
+                        <p>作者：尤瓦尔·赫拉利</p>
+                    </div>
+                </div>
+                <span class="collapse-icon">▼</span>
+            </div>
+            <!-- 三级内容：读书笔记 -->
+            <div class="collapse-content">
+                <div class="note-header">读书笔记</div>
+                <div class="note-content">
+                    <p>《人类简史》从认知革命、农业革命到科学革命，用宏大的视角讲述了人类文明的发展历程。这本书彻底刷新了我的世界观，让我意识到：人类的进步，本质上是“讲故事”的能力——从宗教、国家到金钱，都是人类共同想象的“虚构故事”，却凝聚了亿万人生存的意义。</p>
+                    
+                    <div class="note-highlight">
+                        书中一个有趣的观点：农业革命看似让人类过上了定居生活，实则是“人类驯化了小麦，而非小麦驯化了人类”。为了种植小麦，人类不得不弯腰劳作，放弃了自由的狩猎生活，反而陷入了更辛苦的循环。这让我反思：科技进步真的让人类更幸福了吗？
+                    </div>
+                    
+                    <p>读完这本书，我学会了用更批判性的眼光看待世界，不再盲目相信既定的规则和认知。它提醒我们，要保持好奇心，不断探索事物的本质。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 书籍3：折叠面板 -->
+        <div class="collapse-item">
+            <div class="collapse-header" onclick="toggleCollapse(this)">
+                <div class="book-info">
+                    <img src="https://picsum.photos/400/600?book3" alt="小王子" class="book-cover">
+                    <div class="book-meta">
+                        <h4>小王子</h4>
+                        <p>作者：圣埃克苏佩里</p>
+                    </div>
+                </div>
+                <span class="collapse-icon">▼</span>
+            </div>
+            <!-- 三级内容：读书笔记 -->
+            <div class="collapse-content">
+                <div class="note-header">读书笔记</div>
+                <div class="note-content">
+                    <p>《小王子》是一本看似简单的童话，实则蕴含着深刻的人生哲理。小王子从自己的星球出发，游历了多个星球，遇到了国王、虚荣的人、商人等荒诞的角色，最终在地球明白了“爱与责任”的意义。</p>
+                    
+                    <div class="note-highlight">
+                        最经典的一句话：“真正重要的东西，用眼睛是看不见的，要用心去感受。” 这句话让我明白，人与人之间的情感、事物的本质，都需要用心去体会，而不是被表面现象所迷惑。
+                    </div>
+                    
+                    <p>小王子对玫瑰的爱，让我懂得了“责任”的含义——因为你为你的玫瑰付出了时间和心血，所以它对你来说是独一无二的。这本书教会我，要珍惜身边的人，用心对待每一份情感，保持内心的纯真和善良。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="footer-copyright">
+        <div class="copyright-content">
+            <p>&copy; 2024 琪琪的个人宇宙空间 - 保留所有权利 | 读万卷书，行万里路，探索生活的无限可能</p>
+        </div>
+    </footer>
+
+    <!-- 折叠面板控制脚本 -->
+    <script>
+        function toggleCollapse(header) {
+            // 切换图标旋转
+            const icon = header.querySelector('.collapse-icon');
+            icon.classList.toggle('active');
+            // 切换内容显示/隐藏
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

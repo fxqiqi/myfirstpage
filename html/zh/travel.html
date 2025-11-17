@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>行万里路 - 琪琪的个人宇宙空间</title>
+    <style>
+        /* 基础样式 */
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        /* 返回首页 */
+        .back-home {
+            padding: 1rem 0;
+        }
+        .back-link {
+            color: #059669;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        /* 页面头部 */
+        .travel-header {
+            background-color: #f0fdf4;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .travel-title {
+            color: #059669;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .travel-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        /* 旅行卡片（简化折叠面板） */
+        .travel-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 1rem 1.2rem;
+            background-color: #f0fdf4;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .card-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .card-title {
+            color: #333;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+        .card-arrow {
+            color: #059669;
+            transition: transform 0.3s ease;
+        }
+        .card-arrow.active {
+            transform: rotate(180deg);
+        }
+        /* 卡片内容 */
+        .card-content {
+            padding: 0 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .card-content.active {
+            padding: 1.2rem;
+            max-height: 1500px;
+        }
+        .content-module {
+            margin-bottom: 1rem;
+        }
+        .module-title {
+            color: #059669;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .module-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .module-list {
+            padding-left: 1.5rem;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .module-list li {
+            margin-bottom: 0.3rem;
+        }
+        /* 底部版权 */
+        .footer-copyright {
+            width: 100%;
+            background-color: #f0fdf4;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .copyright-content p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- 返回首页 -->
+        <div class="back-home">
+            <a href="../../index.html" class="back-link">← 回到首页</a>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="travel-header">
+            <h2 class="travel-title">行万里路 · 探索世界的美好</h2>
+            <p class="travel-desc">记录旅程中的美景、美食与感悟，分享实用旅行攻略，与你共赴山河之约～</p>
+        </div>
+
+        <!-- 旅行地1：云南大理 -->
+        <div class="travel-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <img src="https://picsum.photos/id/1036/400/400?dali" alt="云南大理" class="card-img">
+                <h3 class="card-title">云南大理 · 风花雪月的诗意之旅</h3>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">核心亮点</h4>
+                    <p class="module-text">下关风、上关花、苍山雪、洱海月，大理的慢生活藏在古城石板路和洱海波光里，适合3-5天悠闲游玩。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">必去景点</h4>
+                    <ul class="module-list">
+                        <li>大理古城：漫步洋人街、五华楼，感受古城烟火气</li>
+                        <li>洱海：环海骑行，打卡喜洲古镇、双廊古镇，看日落余晖</li>
+                        <li>苍山：乘坐索道上山，徒步玉带路，俯瞰大理全景</li>
+                    </ul>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">必吃美食</h4>
+                    <ul class="module-list">
+                        <li>酸辣鱼：鱼肉鲜嫩，酸辣开胃，古城老字号必尝</li>
+                        <li>烤乳扇：牛奶制成，撒上玫瑰酱，香甜可口</li>
+                        <li>鲜花饼：玫瑰馅料，外皮酥脆，适合当伴手礼</li>
+                    </ul>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">旅行小贴士</h4>
+                    <p class="module-text">紫外线较强，做好防晒；环海骑行注意安全，旺季提前预订住宿。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 旅行地2：福建厦门 -->
+        <div class="travel-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <img src="https://picsum.photos/id/1041/400/400?xiamen" alt="福建厦门" class="card-img">
+                <h3 class="card-title">福建厦门 · 文艺清新的海滨之旅</h3>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">核心亮点</h4>
+                    <p class="module-text">鼓浪屿的文艺小巷、环岛路的海风、沙坡尾的创意街区，厦门是一座适合情侣、闺蜜出游的浪漫城市，建议停留3-4天。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">必去景点</h4>
+                    <ul class="module-list">
+                        <li>鼓浪屿：登日光岩看全景，逛菽庄花园，感受琴岛氛围</li>
+                        <li>厦门大学：参观芙蓉隧道、建南大会堂，感受青春气息（需提前预约）</li>
+                        <li>环岛路：骑行看海，打卡曾厝垵、沙坡尾艺术西区</li>
+                    </ul>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">必吃美食</h4>
+                    <ul class="module-list">
+                        <li>沙茶面：沙茶汤浓郁，配料丰富，推荐月华沙茶面</li>
+                        <li>海蛎煎：新鲜海蛎+地瓜粉，淋上甜辣酱，外酥里嫩</li>
+                        <li>鱼丸汤：鱼肉Q弹，汤汁鲜美，鼓浪屿老字号正宗</li>
+                    </ul>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">旅行小贴士</h4>
+                    <p class="module-text">鼓浪屿轮渡票提前网购；夏季炎热，避开正午高温出行；住宿选中山路或曾厝垵，交通便利。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="footer-copyright">
+        <div class="copyright-content">
+            <p>&copy; 2024 琪琪的个人宇宙空间 - 保留所有权利 | 读万卷书，行万里路，探索生活的无限可能</p>
+        </div>
+    </footer>
+
+    <!-- 简化版切换脚本 -->
+    <script>
+        function toggleCard(header) {
+            const arrow = header.querySelector('.card-arrow');
+            const content = header.nextElementSibling;
+            arrow.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

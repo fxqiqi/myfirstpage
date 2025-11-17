@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>思百年事 - 琪琪的个人宇宙空间</title>
+    <style>
+        /* 基础样式 */
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        /* 返回首页 */
+        .back-home {
+            padding: 1rem 0;
+        }
+        .back-link {
+            color: #ea580c; /* 专属暖橙色主色 */
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        /* 页面头部 */
+        .think-header {
+            background-color: #fffaf0;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .think-title {
+            color: #ea580c;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .think-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        /* 思考卡片 */
+        .think-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 1rem 1.2rem;
+            background-color: #fffaf0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .think-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            background-color: #fed7aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ea580c;
+            font-size: 1.5rem;
+        }
+        .card-title {
+            color: #333;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+        .card-arrow {
+            color: #ea580c;
+            transition: transform 0.3s ease;
+        }
+        .card-arrow.active {
+            transform: rotate(180deg);
+        }
+        /* 卡片内容 */
+        .card-content {
+            padding: 0 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .card-content.active {
+            padding: 1.2rem;
+            max-height: 1500px;
+        }
+        .content-module {
+            margin-bottom: 1rem;
+        }
+        .module-title {
+            color: #ea580c;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .module-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .think-quote {
+            border-left: 3px solid #ea580c;
+            padding: 0.8rem 1rem;
+            margin: 0.8rem 0;
+            background-color: #fffaf0;
+            color: #9a3412;
+        }
+        /* 底部版权 */
+        .footer-copyright {
+            width: 100%;
+            background-color: #fffaf0;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .copyright-content p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- 返回首页 -->
+        <div class="back-home">
+            <a href="../../index.html" class="back-link">← 回到首页</a>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="think-header">
+            <h2 class="think-title">思百年事 · 沉淀人生智慧</h2>
+            <p class="think-desc">以史为鉴，以事为思，在时代与生活的褶皱里，探寻本质与价值，让思考照亮前行之路～</p>
+        </div>
+
+        <!-- 思考主题1：慢下来，才是生活的真相 -->
+        <div class="think-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <div class="think-icon">📜</div>
+                <h3 class="card-title">慢下来，才是生活的真相</h3>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">思考缘起</h4>
+                    <p class="module-text">现代社会节奏越来越快，工作内卷、信息爆炸，我们总在追赶deadline，刷着碎片化信息，却很少有时间静下心来感受生活。一次大理旅行中，看到当地人晒着太阳喝茶、慢悠悠做事的状态，突然开始反思：我们如此匆忙，究竟是为了什么？</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">核心思考</h4>
+                    <div class="think-quote">“人生不是一场赛跑，而是一次旅行。重要的不是速度，而是沿途的风景和看风景的心情。”</div>
+                    <p class="module-text">我们常常被“效率至上”的观念绑架，认为“快”就是优秀，却忽略了生活的本质是体验。慢下来，不是懒惰，而是给心灵留足呼吸的空间：读一本纸质书，做一顿家常菜，和家人好好聊天，这些“慢时光”才能让我们感受到真实的幸福。</p>
+                    <p class="module-text">就像老手艺匠人坚持手工制作，虽然慢，却能赋予作品温度；就像植物生长，需要时间沉淀，才能枝繁叶茂。生活也需要“慢”的智慧，慢慢积累，慢慢感受，才能活出质感。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">行动启示</h4>
+                    <p class="module-text">1. 每天留30分钟“无屏幕时间”，用来阅读、冥想或散步；2. 拒绝无效社交和过度内卷，把时间花在真正重要的事情上；3. 学会接纳“不完美”，允许自己有“慢下来”的勇气。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 思考主题2：从历史中看懂“选择”的力量 -->
+        <div class="think-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <div class="think-icon">📚</div>
+                <h3 class="card-title">从历史中看懂“选择”的力量</h3>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">思考缘起</h4>
+                    <p class="module-text">读《人类简史》时，被“认知革命”的章节深深触动：人类之所以能从动物中脱颖而出，成为地球的主宰，关键在于学会了“合作”与“选择”——选择相信共同的虚构故事，选择跳出本能的局限，选择走向更广阔的世界。这让我联想到，每个人的人生，其实也是由无数个“选择”构成的。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">核心思考</h4>
+                    <div class="think-quote">“历史没有偶然，所有的必然，都是无数个选择叠加的结果；人生没有运气，所有的幸运，都是长期正确选择的回报。”</div>
+                    <p class="module-text">从古人选择定居农耕，到现代人选择职业、生活方式，每一次选择都在塑造着未来。有些选择看似微小，却可能产生蝴蝶效应：比如选择每天多学一点知识，长期下来会积累成巨大的优势；选择善良和真诚，会收获真挚的人际关系。</p>
+                    <p class="module-text">历史也告诉我们，错误的选择会付出沉重代价：比如盲目跟风、违背规律的决策，最终会被时代淘汰。因此，选择不是随心所欲，而是需要远见、勇气和责任——看清事物本质，坚守内心准则，才能做出不后悔的选择。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">行动启示</h4>
+                    <p class="module-text">1. 做重要选择前，多维度思考“长期价值”，而非只看短期利益；2. 接纳选择带来的后果，不逃避、不抱怨，在反思中成长；3. 保持学习和眼界，让自己拥有“做出正确选择”的能力。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="footer-copyright">
+        <div class="copyright-content">
+            <p>&copy; 2024 琪琪的个人宇宙空间 - 保留所有权利 | 读万卷书，行万里路，探索生活的无限可能</p>
+        </div>
+    </footer>
+
+    <!-- 通用切换脚本 -->
+    <script>
+        function toggleCard(header) {
+            const arrow = header.querySelector('.card-arrow');
+            const content = header.nextElementSibling;
+            arrow.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

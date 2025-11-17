@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>创一寸新 - 琪琪的设计作品集</title>
+    <style>
+        /* 基础样式 */
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        /* 返回首页 */
+        .back-home {
+            padding: 1rem 0;
+        }
+        .back-link {
+            color: #10b981; /* 专属青绿色主色 */
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        /* 页面头部 */
+        .create-header {
+            background-color: #ecfdf5;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .create-title {
+            color: #10b981;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .create-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        /* 作品卡片 */
+        .work-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 1rem 1.2rem;
+            background-color: #ecfdf5;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .work-cover {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid #d1fae5;
+        }
+        .card-title {
+            color: #333;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+        .work-tag {
+            background-color: #10b981;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        .card-arrow {
+            color: #10b981;
+            transition: transform 0.3s ease;
+            margin-left: 0.5rem;
+        }
+        .card-arrow.active {
+            transform: rotate(180deg);
+        }
+        /* 卡片内容 */
+        .card-content {
+            padding: 0 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .card-content.active {
+            padding: 1.2rem;
+            max-height: 2000px;
+        }
+        .content-module {
+            margin-bottom: 1rem;
+        }
+        .module-title {
+            color: #10b981;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .module-text {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        /* 作品图片展示 */
+        .work-img-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .work-img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #f0fdf4;
+        }
+        /* 设计说明 */
+        .design-note {
+            background-color: #ecfdf5;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            margin: 0.8rem 0;
+        }
+        .design-note p {
+            color: #065f46;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        /* 底部版权 */
+        .footer-copyright {
+            width: 100%;
+            background-color: #ecfdf5;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .copyright-content p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- 返回首页 -->
+        <div class="back-home">
+            <a href="../../index.html" class="back-link">← 回到首页</a>
+        </div>
+
+        <!-- 页面头部 -->
+        <div class="create-header">
+            <h2 class="create-title">创一寸新 · 设计作品集</h2>
+            <p class="create-desc">以设计为笔，以创意为墨，记录每一份灵感的落地，让新鲜想法点亮生活～</p>
+        </div>
+
+        <!-- 作品1：旅行主题手账设计 -->
+        <div class="work-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <img src="https://picsum.photos/id/106/400/400?notebook" alt="旅行手账" class="work-cover">
+                <h3 class="card-title">旅行主题手账设计</h3>
+                <span class="work-tag">手账设计</span>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">作品简介</h4>
+                    <p class="module-text">为记录旅行点滴而设计的系列手账，融合了旅行地的文化元素与个人风格，包含封面设计、内页排版、贴纸素材等，整体风格清新治愈，兼具实用性与观赏性。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">设计亮点</h4>
+                    <ul class="module-text" style="padding-left: 1.5rem; list-style: disc;">
+                        <li>色彩搭配：提取旅行地自然色调（大理的蓝白、厦门的清新绿），营造沉浸式氛围；</li>
+                        <li>元素设计：手绘旅行地标（洱海、鼓浪屿）、特色美食（酸辣鱼、沙茶面）作为贴纸素材；</li>
+                        <li>排版逻辑：预留行程记录区、照片粘贴区、感悟书写区，满足多样化记录需求。</li>
+                    </ul>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">作品展示</h4>
+                    <div class="work-img-group">
+                        <img src="https://picsum.photos/id/106/800/500?notebook1" alt="手账封面" class="work-img">
+                        <img src="https://picsum.photos/id/116/800/500?notebook2" alt="手账内页" class="work-img">
+                    </div>
+                </div>
+                <div class="design-note">
+                    <p><strong>设计感悟：</strong>手账不仅是记录工具，更是旅行记忆的载体。每一笔手绘、每一次排版，都是对旅行的二次创作，让美好瞬间得以永久留存。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 作品2：城市文创产品设计 -->
+        <div class="work-card">
+            <div class="card-header" onclick="toggleCard(this)">
+                <img src="https://picsum.photos/id/26/400/400?cultural" alt="文创产品" class="work-cover">
+                <h3 class="card-title">城市文创产品设计（成都主题）</h3>
+                <span class="work-tag">文创设计</span>
+                <span class="card-arrow">▼</span>
+            </div>
+            <div class="card-content">
+                <div class="content-module">
+                    <h4 class="module-title">作品简介</h4>
+                    <p class="module-text">以成都“巴适慢生活”为核心主题，设计系列文创产品，包括冰箱贴、钥匙扣、帆布包，将成都特色元素（大熊猫、火锅、宽窄巷子）融入设计，传递城市文化魅力。</p>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">设计亮点</h4>
+                    <ul class="module-text" style="padding-left: 1.5rem; list-style: disc;">
+                        <li>造型设计：冰箱贴采用大熊猫吃火锅的卡通造型，钥匙扣以宽窄巷子门楼为原型，兼具辨识度与趣味性；</li>
+                        <li>材质选择：帆布包采用环保棉麻材质，印刷工艺清晰，耐磨实用；</li>
+                        <li>文化融入：产品背面印有成都方言（“巴适得板”“安逸”），增强地域特色。</li>
+                    </ul>
+                </div>
+                <div class="content-module">
+                    <h4 class="module-title">作品展示</h4>
+                    <div class="work-img-group">
+                        <img src="https://picsum.photos/id/26/800/500?cultural1" alt="熊猫火锅冰箱贴" class="work-img">
+                        <img src="https://picsum.photos/id/42/800/500?cultural2" alt="成都主题帆布包" class="work-img">
+                    </div>
+                </div>
+                <div class="design-note">
+                    <p><strong>设计感悟：</strong>文创产品是城市文化的“移动名片”。好的文创设计，既能满足实用需求，又能传递文化内涵，让更多人了解并爱上一座城市。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="footer-copyright">
+        <div class="copyright-content">
+            <p>&copy; 2024 琪琪的个人宇宙空间 - 保留所有权利 | 读万卷书，行万里路，探索生活的无限可能</p>
+        </div>
+    </footer>
+
+    <!-- 通用切换脚本 -->
+    <script>
+        function toggleCard(header) {
+            const arrow = header.querySelector('.card-arrow');
+            const content = header.nextElementSibling;
+            arrow.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
